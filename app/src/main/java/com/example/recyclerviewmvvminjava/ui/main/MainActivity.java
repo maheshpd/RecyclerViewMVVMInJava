@@ -2,6 +2,7 @@ package com.example.recyclerviewmvvminjava.ui.main;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -23,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        postViewModel = ViewModelProviders.of(this).get(PostViewModel.class);
+//        postViewModel = ViewModelProviders.of(this).get(PostViewModel.class);
+        postViewModel = new ViewModelProvider(this).get(PostViewModel.class);
 
         arrayList = new ArrayList<>();
         postViewModel.getPosts();
